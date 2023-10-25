@@ -1,7 +1,10 @@
+# # from each wavelet map in the decomposition, four statistical feature were measured: mean intensity, standard deviation of intensity, skewness of intensity and kurtosis of intensity
+
 import os
 import cv2
 import pywt
 import numpy as np
+from scipy.stats import skew, kurtosis
 
 # Define the input directories
 input_normal_dir = './Lay_visualization/Normal'
@@ -27,12 +30,14 @@ def compute_wavelet_statistics(image):
     for level, c in enumerate(coeffs):
         flat_coeffs = np.hstack([sub_c.flatten() for sub_c in c])
 
-        # Compute statistics for each level
+        # Compute additional statistics for each level
         statistics[f'Level {level}'] = {
             'min': np.min(flat_coeffs),
             'max': np.max(flat_coeffs),
             'mean': np.mean(flat_coeffs),
-            'std': np.std(flat_coeffs)
+            'std': np.std(flat_coeffs),
+            'skewness': skew(flat_coeffs),
+            'kurtosis': kurtosis(flat_coeffs)
         }
 
     return statistics
