@@ -3,10 +3,11 @@ import pydicom
 import numpy as np
 from scipy.stats import skew, kurtosis
 import pywt
+import pylibjpeg
 
 # Define the input and output directories
-input_root_dir = './diacom_images'
-output_root_dir = './output_diacom_images'
+input_root_dir = './cases'
+output_root_dir = './output_diacom_txt_files'
 
 # Ensure the output directory exists
 os.makedirs(output_root_dir, exist_ok=True)
