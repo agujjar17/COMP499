@@ -1,12 +1,22 @@
+#for cair
+import sys
+
+# Add the path to the specific folder containing Python packages
+specific_folder_path = r'/gpfs/home/agujjar/anaconda3/envs/myenv/lib'
+sys.path.append(specific_folder_path)
+
+# Now you can import modules and packages from the specific folder
+
+####################
 import os
 import pydicom
 import numpy as np
 from scipy.stats import skew, kurtosis
 import pywt
-import pylibjpeg
+import pickle
 
 # Define the input and output directories
-input_root_dir = './cases'
+input_root_dir = './images'
 output_root_dir = './output_diacom_txt_files'
 
 # Ensure the output directory exists
@@ -16,8 +26,7 @@ os.makedirs(output_root_dir, exist_ok=True)
 wavelet = 'haar'  # can change the wavelet type here
 n_levels = 3
 
-
-def compute_wavelet_statistics(image):
+def compute_wavelet_statistics_and_coefficients(image):
     # Perform the wavelet transformation
     coeffs = pywt.wavedec2(image, wavelet, level=n_levels)
 
@@ -36,8 +45,7 @@ def compute_wavelet_statistics(image):
             'kurtosis': kurtosis(flat_coeffs)
         }
 
-    return statistics
-
+    return statistics, coeffs
 
 def save_statistics(input_dir, output_dir):
     for patient_folder in os.listdir(input_dir):
@@ -56,10 +64,10 @@ def save_statistics(input_dir, output_dir):
                 # Extract pixel data
                 image = dcm.pixel_array
 
-                # Compute wavelet statistics
-                wavelet_stats = compute_wavelet_statistics(image)
+                # Compute wavelet statistics and coefficients
+                wavelet_stats, coefficients = compute_wavelet_statistics_and_coefficients(image)
 
-                # Create a text file for each DICOM file to store statistics
+                # Create a text file for each DICOM file to store statistics and coefficients
                 stats_file_path = os.path.join(
                     output_patient_folder, f'{os.path.splitext(dicom_file)[0]}.txt')
                 with open(stats_file_path, 'w') as stats_file:
@@ -68,7 +76,8 @@ def save_statistics(input_dir, output_dir):
                         stats_file.write(f"Level {level}:\n")
                         for stat, value in stats.items():
                             stats_file.write(f"{stat}: {value}\n")
+                    stats_file.write("\nWavelet Coefficients:\n")
+                    stats_file.write(str(coefficients))  # Write coefficients directly
 
-
-# Save statistics for DICOM images
+# Save statistics and coefficients for DICOM images
 save_statistics(input_root_dir, output_root_dir)
