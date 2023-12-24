@@ -1,0 +1,28 @@
+\chapter{ResultsAndDiscussion}
+\label{chap4}
+\section{Data Overview}
+Before delving into the results and their implications, it is essential to provide an overview of the dataset used in this study. The dataset consists of Digital Imaging and Communications in Medicine (DICOM) images obtained from breast cancer screenings. Each image underwent a preprocessing step, extracting key statistical parameters as outlined in Section 3.3.1. The statistical parameters, including mean, standard deviation, skewness, kurtosis, and others, were then used to create a feature vector for each image.
+The dataset was split into training and testing sets, with statistical features serving as input for machine learning models. The models, encompassing Logistic Regression, Random Forest Classifier, Support Vector Classifier (SVC), and Decision Tree Classifier, were evaluated based on their performance in distinguishing between normal and abnormal cases. The metrics used for evaluation included True Positives, False Positives, False Negatives, and True Negatives, which were further used to construct confusion matrices for each model.
+
+\section{Model Performance}
+The performance of each machine learning algorithm was assessed using standard metrics, shedding light on their ability to detect breast cancer accurately. Table 4.1 presents the confusion matrices for each model, showcasing the distribution of True Positives, False Positives, False Negatives, and True Negatives. These matrices serve as a foundation for a comprehensive understanding of the strengths and limitations of the implemented models.
+
+Table 4.1: Model Performance Confusion Matrices
+
+Model	True Positives	False Positives	False Negatives	True Negatives
+Logistic Regression	XX	XX	XX	XX
+Random Forest Classifier	XX	XX	XX	XX
+Support Vector Classifier	XX	XX	XX	XX
+Decision Tree Classifier	XX	XX	XX	XX
+
+\section{Discussion}
+The discussion revolves around the observed results and their implications in the context of breast cancer detection.
+
+\subsection{Model Comparison}
+Comparing the performance of the four machine learning models, it is evident that each algorithm exhibits distinct strengths and weaknesses. Logistic Regression, being a linear model, may excel in capturing linear relationships within the data. Random Forest Classifier, an ensemble method, may demonstrate robustness in handling complex patterns. Support Vector Classifier, by virtue of its ability to handle non-linear relationships, could be effective in capturing intricate features. Decision Tree Classifier, known for its interpretability, may provide insights into the decision-making process.
+
+\subsection{Sensitivity and Specificity Analysis}
+Sensitivity (True Positive Rate) and specificity (True Negative Rate) are important measures in the context of breast cancer detection. Specificity evaluates the model's precision in detecting negative instances, or cases without breast cancer, and sensitivity assesses the model's capacity to accurately identify positive cases, or genuine cases of breast cancer. A crucial factor in maximizing the model for practical use is the trade-off between sensitivity and specificity.
+
+\subsection{Limitations and Challenges}
+A comprehensive evaluation of the study's limitations and difficulties requires acknowledgment of these factors. The models' generalizability may be impacted by variables including the size and diversity of the dataset, differences in image quality, and the selection of statistical parameters. Furthermore, biases resulting from the data gathering procedure are introduced when a retrospective dataset is used.
