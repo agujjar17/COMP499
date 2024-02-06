@@ -106,11 +106,37 @@ split_index = int(0.8 * len(data))
 X_train, y_train = data[:split_index], labels[:split_index]
 X_test, y_test = data[split_index:], labels[split_index:]
 
+# for model in algorithms:
+#     model.fit(X_train, y_train)
+#     test_predictions = model.predict(X_test)
+#     accuracy = accuracy_score(y_test, test_predictions)
+#     model_name = model.__class__.__name__
+#     print(f"{model_name} Accuracy on Test Set: {accuracy}")
+#     print(f"Classification Report for {model_name}:\n", classification_report(y_test, test_predictions))
+#     print(f"Confusion Matrix for {model_name}:\n", confusion_matrix(y_test, test_predictions))
+
 for model in algorithms:
     model.fit(X_train, y_train)
     test_predictions = model.predict(X_test)
+    
+    # Confusion Matrix
+    tn, fp, fn, tp = confusion_matrix(y_test, test_predictions).ravel()
+    print(f"Confusion Matrix for {model.__class__.__name__}:\n", confusion_matrix(y_test, test_predictions))
+    
+    # Metrics
     accuracy = accuracy_score(y_test, test_predictions)
-    model_name = model.__class__.__name__
-    print(f"{model_name} Accuracy on Test Set: {accuracy}")
-    print(f"Classification Report for {model_name}:\n", classification_report(y_test, test_predictions))
-    print(f"Confusion Matrix for {model_name}:\n", confusion_matrix(y_test, test_predictions))
+    
+    # Handling division by zero for precision
+    precision = tp / (tp + fp) if (tp + fp) != 0 else 0.0
+    
+    f1score = 2 * (tp / (2 * tp + fp + fn)) if (2 * tp + fp + fn) != 0 else 0.0
+    sensitivity = tp / (tp + fn) if (tp + fn) != 0 else 0.0
+    recall = sensitivity
+    
+    print(f"{model.__class__.__name__} Metrics:")
+    print(f"Accuracy: {accuracy}")
+    print(f"F1 Score: {f1score}")
+    print(f"Sensitivity: {sensitivity}")
+    print(f"Precision: {precision}")
+    print(f"Recall: {recall}")
+    print("\n")
