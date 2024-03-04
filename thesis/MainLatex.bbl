@@ -10,12 +10,10 @@ Rebecca~L. Siegel, Kimberly~D. Miller, Hannah~E. Fuchs, and Ahmedin Jemal.
 \newblock {Cancer statistics, 2022.}
 \newblock {\em CA: A Cancer Journal for Clinicians}, 72(1):7--33, 2022.
 
-\bibitem{Michael2006}
-Michael Barnett.
-\newblock {SEMI-AUTOMATED SEARCH FOR ABNORMALITIES IN MAMMOGRAPHIC X-RAY
-  IMAGES}.
-\newblock {\em Department of Physics and Engineering Physics University of
-  Saskatchewan}, August 2006.
+\bibitem{PublicHealthAgencyofCanada2024}
+{Cancer}.
+\newblock {\em Public Health Agency of Canada}, March 2024.
+\newblock Accessed: 2024-03-02.
 
 \bibitem{QualityMeasure}
 Perry N, Broeders M, De~Wolf C, and Törrberg S.
@@ -23,6 +21,13 @@ Perry N, Broeders M, De~Wolf C, and Törrberg S.
   Mammography Screening, 4th ed.}
 \newblock {\em Office for Official Publications of the European Communities},
   Luxembourg 2006.
+
+\bibitem{Michael2006}
+Michael Barnett.
+\newblock {SEMI-AUTOMATED SEARCH FOR ABNORMALITIES IN MAMMOGRAPHIC X-RAY
+  IMAGES}.
+\newblock {\em Department of Physics and Engineering Physics University of
+  Saskatchewan}, August 2006.
 
 \bibitem{WaveletStatistics}
 Achraf Cohen and Mohamed Amine Amine~Atoui.
@@ -45,11 +50,13 @@ Srinivasan Vedantham, Andrew Karellas, Gopal~R. Vijayaraghavan, and Daniel~B.
 \newblock {\em Radiology}, 277(3):663--684, 10 2015.
 \newblock PMID: 26599926.
 
-\bibitem{Multiscale}
-Om~Prakash, Chang~Min Park, Ashish Khare, Moongu Jeon, and Jeonghwan Gwak.
-\newblock Multiscale fusion of multimodal medical images using lifting scheme
-  based biorthogonal wavelet transform.
-\newblock {\em Optik}, 182:995--1014, 2019.
+\bibitem{zebari2021breast}
+Diyar~Akay Zebari, Dalia~Abdulrahman Ibrahim, Diyar~Qader Zeebaree, Mazin~Abed
+  Mohammed, Habibollah Haron, Nechirvan~Asaad Zebari, Robertas
+  Dama{\v{s}}evi{\v{c}}ius, and Rytis Maskeli{\=u}nas.
+\newblock {Breast Cancer Detection Using Mammogram Images with Improved
+  Multi-Fractal Dimension Approach and Feature Fusion}.
+\newblock {\em Applied Sciences}, 11(24):12122, 2021.
 
 \bibitem{Tumor}
 Cruz-Roa, A., Gilmore, H., Basavanhally, and A~et~al.
@@ -73,43 +80,63 @@ Hieu~Huy Pham, Hieu~Nguyen Trung, and Ha~Quy Nguyen.
 \newblock \url {https://doi.org/10.13026/br2v-7517}.
 
 \bibitem{RSNA}
-Hieu Huy~Pham Pham, Hieu~Nguyen Trung, and Ha~Quy Nguyen.
-\newblock {VinDr-Mammo: A large-scale benchmark dataset for computer-aided
-  detection and diagnosis in full-field digital mammography (version 1.0.0)}.
-\newblock {\em PhysioNet}, 2022.
-\newblock \url {https://doi.org/10.13026/br2v-7517}.
+Chris Carr, Felipe Kitamura, George Partridge, inversion, Jayashree
+  Kalpathy-Cramer, John Mongan, Katherine Andriole, Lavender, Maryam Vazirabad,
+  Michelle Riopel, Robyn Ball, Sohier Dane, and Yan Chen.
+\newblock {RSNA Screening Mammography Breast Cancer Detection}, 2022.
+\newblock \url{https://kaggle.com/competitions/rsna-breast-cancer-detection}.
+
+\bibitem{Inbreast}
+Ines~C. Moreira, Igor Amaral, and Ines et~al. Domingues.
+\newblock {INbreast: Toward a Full-field Digital Mammographic Database}.
+\newblock {\em Academic Radiology}, 2011.
+\newblock \url {https://doi:10.1016/j.acra.2011.09.014}.
 
 \bibitem{importancestats}
 Vijay Kumar and Priyanka Gupta.
-\newblock Importance of statistical measures in digital image processing.
+\newblock {Importance of Statistical Measures in Digital Image Processing}.
 \newblock {\em International Journal of Emerging Technology and Advanced
   Engineering}, 2, 08 2012.
 
 \bibitem{MESELHYELTOUKHY2012123}
 Mohamed {Meselhy Eltoukhy}, Ibrahima Faye, and Brahim {Belhaouari Samir}.
-\newblock A statistical based feature extraction method for breast cancer
-  diagnosis in digital mammogram using multiresolution representation.
+\newblock {A statistical based feature extraction method for breast cancer
+  diagnosis in digital mammogram using multiresolution representation}.
 \newblock {\em Computers in Biology and Medicine}, 42(1):123--128, 2012.
 
 \bibitem{li2020diagnostic}
 Z.~Li, X.~Li, C.~Peng, W.~Dai, H.~Huang, X.~Li, C.~Xie, and J.~Liang.
-\newblock The diagnostic performance of diffusion kurtosis imaging in the
-  characterization of breast tumors: A meta-analysis.
+\newblock {The Diagnostic Performance of Diffusion Kurtosis Imaging in the
+  Characterization of Breast Tumors: A Meta-Analysis}.
 \newblock {\em Frontiers in oncology}, 10:575272, 2020.
 
 \bibitem{YAN2006285}
 BF. Yan, A.~Miyamoto, and E.~Bruhwiler.
-\newblock Wavelet transform-based modal parameter identification considering
-  uncertainty.
+\newblock {Wavelet transform-based modal parameter identification considering
+  uncertainty}.
 \newblock {\em Journal of Sound and Vibration}, 291(1):285--301, 2006.
 
 \bibitem{barragan2021artificial}
 A.~Barragan-Montero, U.~Javaid, G.~Valdes, and et~al.
-\newblock Artificial intelligence and machine learning for medical imaging: A
-  technology review.
+\newblock {Artificial intelligence and machine learning for medical imaging: A
+  technology review}.
 \newblock {\em Physica medica : PM : an international journal devoted to the
   applications of physics to medicine and biology : official journal of the
   Italian Association of Biomedical Physics AIFB}, 83:242--256, 2021.
 \newblock \url {https://doi.org/10.1016/j.ejmp.2021.04.016}.
+
+\bibitem{ohuchi2016sensitivity}
+Noriaki Ohuchi, Akihiko Suzuki, Tomotaka Sobue, Masaaki Kawai, Seiichiro
+  Yamamoto, Ying-Fang Zheng, and et~al.
+\newblock {Sensitivity and specificity of mammography and adjunctive
+  ultrasonography to screen for breast cancer in the Japan Strategic
+  Anti-cancer Randomized Trial (J-START): a randomised controlled trial}.
+\newblock {\em The Lancet}, 387(10016):341--348, 2016.
+
+\bibitem{forde2008understanding}
+Samantha Forde, Robert Beardmore, Ivana Gudelj, et~al.
+\newblock {Understanding the limits to generalizability of experimental
+  evolutionary models}.
+\newblock {\em Nature}, 455:220--223, 2008.
 
 \end{thebibliography}

@@ -5,24 +5,61 @@ Before delving into the results and their implications, it is essential to provi
 The dataset was split into training and testing sets, with statistical features serving as input for machine learning models. The models, encompassing Logistic Regression, Random Forest Classifier, Support Vector Classifier (SVC), and Decision Tree Classifier, were evaluated based on their performance in distinguishing between normal and abnormal cases. The metrics used for evaluation included True Positives, False Positives, False Negatives, and True Negatives, which were further used to construct confusion matrices for each model.
 
 \section{Model Performance}
-The performance of each machine learning algorithm was assessed using standard metrics, shedding light on their ability to detect breast cancer accurately. Table 4.1 presents the confusion matrices for each model, showcasing the distribution of True Positives, False Positives, False Negatives, and True Negatives. These matrices serve as a foundation for a comprehensive understanding of the strengths and limitations of the implemented models.
+The performance of each machine learning algorithm was assessed using standard metrics, shedding light on their ability to detect breast cancer accurately. Table 4.3 provides different performance metrics for each model on both datasets, showcasing the distribution of True Positives, False Positives, False Negatives, and True Negatives.
 
-Table 4.1: Model Performance Confusion Matrices
 
-Model	True Positives	False Positives	False Negatives	True Negatives
-Logistic Regression	XX	XX	XX	XX
-Random Forest Classifier	XX	XX	XX	XX
-Support Vector Classifier	XX	XX	XX	XX
-Decision Tree Classifier	XX	XX	XX	XX
+\begin{table}[htbp]
+  \centering
+  \caption{Performance Metrics - VinDr Dataset}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    Model & Accuracy & F1 Score & Sensitivity & Precision \\
+    \hline
+    Logistic Regression & 0.9595 & 0.0 & 0.0 & 0.0 \\
+    Random Forest Classifier & 0.9605 & 0.1023 & 0.0556 & 0.6429 \\
+    Support Vector Classifier & 0.9595 & 0.0 & 0.0 & 0.0 \\
+    Decision Tree Classifier & 0.918 & 0.0939 & 0.1049 & 0.085 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Performance Metrics - INbreast Dataset}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    Model & Accuracy & F1 Score & Sensitivity & Precision \\
+    \hline
+    Logistic Regression & 0.7111 & 0.8312 & 0.9143 & 0.7619 \\
+    Random Forest Classifier & 0.6444 & 0.7838 & 0.8286 & 0.7436 \\
+    Support Vector Classifier & 0.6889 & 0.8158 & 0.8857 & 0.7561 \\
+    Decision Tree Classifier & 0.5778 & 0.7246 & 0.7143 & 0.7353 \\
+    \hline
+  \end{tabular}
+\end{table}
 
 \section{Discussion}
 The discussion revolves around the observed results and their implications in the context of breast cancer detection.
-
 \subsection{Model Comparison}
-Comparing the performance of the four machine learning models, it is evident that each algorithm exhibits distinct strengths and weaknesses. Logistic Regression, being a linear model, may excel in capturing linear relationships within the data. Random Forest Classifier, an ensemble method, may demonstrate robustness in handling complex patterns. Support Vector Classifier, by virtue of its ability to handle non-linear relationships, could be effective in capturing intricate features. Decision Tree Classifier, known for its interpretability, may provide insights into the decision-making process.
+In assessing machine learning models across both the Inbreast and Vindir datasets, a comprehensive understanding of their performances reveals limitations of using the wavelet features for breast cancer detection.
+
+Logistic Regression demonstrates commendable accuracy, yet a closer inspection of its metrics reveals challenges in effectively identifying positive cases. The F1 Score, Sensitivity, and Precision all point to limitations in the model's ability to discern abnormal cases accurately.
+The Random Forest Classifier, as an ensemble method, exhibits resilience in capturing intricate patterns. However, the heightened number of false positives suggests a compromise in precision, emphasizing the inherent trade-offs involved in its application.
+
+Similarly, the Support Vector Classifier (SVC) shares similarities with Logistic Regression in grappling with sensitivity and precision. The model's struggle to distinguish between normal and abnormal cases reflects in its overall performance, characterized by a low F1 Score.
+
+The Decision Tree Classifier, known for interpretability, falls short in overall performance. Despite providing insights into the decision-making process, the model's lower accuracy and F1 Score underscore challenges in comprehensively capturing the complexity of breast cancer patterns
 
 \subsection{Sensitivity and Specificity Analysis}
-Sensitivity (True Positive Rate) and specificity (True Negative Rate) are important measures in the context of breast cancer detection. Specificity evaluates the model's precision in detecting negative instances, or cases without breast cancer, and sensitivity assesses the model's capacity to accurately identify positive cases, or genuine cases of breast cancer. A crucial factor in maximizing the model for practical use is the trade-off between sensitivity and specificity.
+Sensitivity (True Positive Rate) and specificity (True Negative Rate) play pivotal roles in evaluating the effectiveness of breast cancer detection models \cite{ohuchi2016sensitivity} across both the Inbreast and Vindir datasets.
+
+Logistic Regression, despite its high specificity, exhibits a notable challenge in identifying positive cases, as evidenced by a sensitivity of 0.0. The model's proficiency in recognizing cases without breast cancer is contrasted by a struggle to capture instances of the disease.
+
+The Random Forest Classifier strikes a balance between sensitivity and specificity, outperforming Logistic Regression in terms of identifying positive cases. However, the compromise in precision, indicated by an increased false positive rate, underscores the model's inherent challenges.
+
+Similar to Logistic Regression, the Support Vector Classifier (SVC) grapples with issues of both sensitivity and specificity, contributing to an overall suboptimal performance. The model's struggle to distinguish between normal and abnormal cases persists, echoing the challenges seen in Logistic Regression.
+
+The Decision Tree Classifier, while showing a slightly improved sensitivity, continues to face challenges in accurately identifying positive cases. The model's interpretability comes at the cost of overall effectiveness in breast cancer detection
 
 \subsection{Limitations and Challenges}
-A comprehensive evaluation of the study's limitations and difficulties requires acknowledgment of these factors. The models' generalizability may be impacted by variables including the size and diversity of the dataset, differences in image quality, and the selection of statistical parameters. Furthermore, biases resulting from the data gathering procedure are introduced when a retrospective dataset is used.
+A comprehensive evaluation of the study's limitations and difficulties requires acknowledgment of these factors. The models' generalizability may be impacted by variables including the size and diversity of the dataset \cite{forde2008understanding}, differences in image quality, and the selection of statistical parameters. Furthermore, biases resulting from the data gathering procedure are introduced when a retrospective dataset is used.
